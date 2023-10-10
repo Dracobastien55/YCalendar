@@ -1,0 +1,35 @@
+﻿<UserControl x:Class="YCalendar_WPF.Views.YCalendarControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:YCalendar_WPF.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.8*"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0}{1}">
+                    <Binding Path="Month"/>
+                    <Binding Path="Year"/>
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Dates}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="{Binding StringFormat=' {0:1}{D}'}"/>
+                        <TextBlock Text="{Binding Day}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</UserControl>

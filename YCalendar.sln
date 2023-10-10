@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCalendar", "YCalendar.csproj", "{4C198E77-216F-48C3-A7B3-3A7C360BDCA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCalendar", "YCalendar.csproj", "{4C198E77-216F-48C3-A7B3-3A7C360BDCA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCalendarTest", "YCalendarTest\YCalendarTest.csproj", "{C831AA19-8BB4-4448-A25F-69E11A0D2152}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YCalendarTests", "..\YCalendarTests\YCalendarTests.csproj", "{0D53CA8C-01FC-44E4-B2E0-43462CDDB65D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPF-DEMO", "..\WPF-DEMO\WPF-DEMO.csproj", "{F0215AA9-08E6-4705-8D01-54EC161FF07C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YCalendar-WPF", "..\YCalendar-WPF\YCalendar-WPF.csproj", "{18E7A012-3ECB-4283-9556-B45C111F4ABD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +21,18 @@ Global
 		{4C198E77-216F-48C3-A7B3-3A7C360BDCA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C198E77-216F-48C3-A7B3-3A7C360BDCA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C198E77-216F-48C3-A7B3-3A7C360BDCA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C831AA19-8BB4-4448-A25F-69E11A0D2152}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C831AA19-8BB4-4448-A25F-69E11A0D2152}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C831AA19-8BB4-4448-A25F-69E11A0D2152}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C831AA19-8BB4-4448-A25F-69E11A0D2152}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D53CA8C-01FC-44E4-B2E0-43462CDDB65D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D53CA8C-01FC-44E4-B2E0-43462CDDB65D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D53CA8C-01FC-44E4-B2E0-43462CDDB65D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D53CA8C-01FC-44E4-B2E0-43462CDDB65D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0215AA9-08E6-4705-8D01-54EC161FF07C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0215AA9-08E6-4705-8D01-54EC161FF07C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0215AA9-08E6-4705-8D01-54EC161FF07C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0215AA9-08E6-4705-8D01-54EC161FF07C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E7A012-3ECB-4283-9556-B45C111F4ABD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E7A012-3ECB-4283-9556-B45C111F4ABD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E7A012-3ECB-4283-9556-B45C111F4ABD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E7A012-3ECB-4283-9556-B45C111F4ABD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
