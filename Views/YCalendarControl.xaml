@@ -4,32 +4,87 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:YCalendar_WPF.Views"
+             xmlns:converter="clr-namespace:YCalendar_WPF.Converter"
+             xmlns:VM="clr-namespace:YCalendar_WPF.ViewModels"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+
+    <UserControl.Resources>
+        <converter:IntToMonthNameConverter x:Key="MonthNameConvert"/>
+
+        <Style x:Key="OnDayActivated" TargetType="{x:Type ListViewItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListViewItem}">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0,0,1,1">
+                            <ContentPresenter/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding HasActivity}" Value="true">
+                    <Setter Property="Background" Value="LightBlue"/>
+                </DataTrigger>
+                <DataTrigger Binding="{Binding IsAnHoliday}" Value="True">
+                    <Setter Property="Background" Value="Orange"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+
+    <UserControl.DataContext>
+        <VM:CalendarViewModel/>
+    </UserControl.DataContext>
+
+    <Grid Background="Red">
         <Grid.RowDefinitions>
             <RowDefinition Height="0.2*"/>
             <RowDefinition Height="0.8*"/>
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0">
-            <TextBlock.Text>
-                <MultiBinding StringFormat="{}{0}{1}">
-                    <Binding Path="Month"/>
-                    <Binding Path="Year"/>
-                </MultiBinding>
-            </TextBlock.Text>
-        </TextBlock>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.1*"/>
+                <ColumnDefinition Width="0.8*"/>
+                <ColumnDefinition Width="0.1*"/>
+            </Grid.ColumnDefinitions>
 
-        <ListView Grid.Row="1" ItemsSource="{Binding Dates}">
+            <Button Grid.Column="0" Content="Previous" FontSize="16" Command="{Binding Service.PreviousMonth}"/>
+            <Button Grid.Column="2" Content="Next" FontSize="16" Command="{Binding Service.NextMonth}"/>
+
+            <TextBlock Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="30" FontWeight="Bold">
+                <TextBlock.Text>
+                    <MultiBinding StringFormat="{}{0} {1}">
+                        <Binding Path="Month" Converter="{StaticResource MonthNameConvert}"/>
+                        <Binding Path="Year"/>
+                    </MultiBinding>
+                </TextBlock.Text>
+            </TextBlock>
+        </Grid>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Dates}" ItemContainerStyle="{StaticResource OnDayActivated}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="7"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical">
-                        <TextBlock Text="{Binding StringFormat=' {0:1}{D}'}"/>
-                        <TextBlock Text="{Binding Day}"/>
-                    </StackPanel>
+                    <Button Background="Transparent" BorderBrush="Transparent" 
+                            Command="{Binding RelativeSource=
+                        {RelativeSource Mode=FindAncestor, 
+                                        AncestorType={x:Type UserControl}}, 
+                                        Path=DataContext.Service.SelectDate}" 
+                            CommandParameter="{Binding}">
+                        <StackPanel Orientation="Vertical" HorizontalAlignment="Center">
+                            <TextBlock Text="{Binding NameDay}"/>
+                            <TextBlock Text="{Binding Day}" HorizontalAlignment="Center" Margin="5"/>
+                        </StackPanel>
+                    </Button>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        
     </Grid>
 </UserControl>

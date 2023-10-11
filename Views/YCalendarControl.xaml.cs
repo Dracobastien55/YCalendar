@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using YCalendar_WPF.Models;
+using YCalendar_WPF.ViewModels;
 
 namespace YCalendar_WPF.Views
 {

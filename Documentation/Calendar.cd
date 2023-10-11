@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="YCalendar_WPF.Service.CalendarService">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAABgAAAAAQAAAABAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Service\CalendarService.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YCalendar_WPF.Models.YCalendar">
+    <Position X="10" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Models\YCalendar.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YCalendar_WPF.Models.PlanningDay" Collapsed="true">
+    <Position X="3.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAIAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\PlanningDay.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="YCalendar_WPF.ViewModels.CalendarViewModel">
+    <Position X="7.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAABAAAAAAAAAAAQAAEAAgAAAACAAA=</HashCode>
+      <FileName>ViewModels\CalendarViewModel.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Model" />
+      <Property Name="Service" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Dates" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="YCalendar_WPF.Interface.ICalendarDay">
+    <Position X="7.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAIAAAAAAAIAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>Interface\ICalendarDay.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
